@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
@@ -9,10 +10,12 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent {
 
-  constructor(private router: Router, private AuthService: AuthService) {
-      /*this.AuthService.user = {
-        username: 'John'
-      } as any;
-      this.router.navigate(['/']);*/
-   }
+  constructor(private router: Router, private AuthService: AuthService) {}
+
+   loginHandler(form: NgForm):void {
+    if(form.invalid) {return;}
+  //   this.AuthService.user = {
+  //     username: 'John'
+  //   } as any;
+ }
 }
